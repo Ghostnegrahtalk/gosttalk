@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnonChat</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1-crypto-js.js"></script>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div id="loginForm">
+        <h2>Login / Signup</h2>
+        <input type="text" id="username" placeholder="Choose a username" />
+        <input type="password" id="password" placeholder="Choose a password" />
+        <button onclick="loginSignup()">Login / Signup</button>
+    </div>
+
+    <!-- Main Content (hidden until logged in) -->
+    <div id="content" style="display: none;">
+        <div class="container">
+            <!-- Left Side (Profile / Settings) -->
+            <div id="profile">
+                <h3>Your Profile</h3>
+                <button onclick="showProfileSettings()">Edit Profile</button>
+            </div>
+
+            <!-- Feed (Posts) -->
+            <div id="mainFeed">
+                <h2>AnonFeed</h2>
+                <textarea id="newPost" placeholder="Post something anonymously"></textarea>
+                <input type="file" id="mediaUpload" accept="image/*,video/*">
+                <button onclick="createPost()">Post</button>
+                <div id="feed"></div>
+            </div>
+
+            <!-- Chatlog Section -->
+            <div id="chatSection">
+                <h3>Join or Create a Chatlog</h3>
+                <button onclick="createChatlog()">Create Chatlog</button>
+                <input type="text" id="chatCode" placeholder="Enter Chat Code">
+                <button onclick="joinChatlog()">Join Chatlog</button>
+            </div>
+
+            <!-- Search -->
+            <div id="search">
+                <h3>Search</h3>
+                <input type="text" id="searchQuery" placeholder="Search the net...">
+                <button onclick="searchWeb()">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
